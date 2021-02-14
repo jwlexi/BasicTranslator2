@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Translator</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- We put the css below this so bootstrap code won't affect our css. our css will override what is on top-->
+
+
+
+    <style> 
+    #header {
+        font-size: 250%;
+        text-align: center; 
+    }
+
+    .card {
+        width: 50%;
+        margin:0 auto;/*centers div container */
+        margin-top: 50px;
+    }
+    </style>
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <header> 
+          <h1 id = "header" class="bg-dark text-white p-4"> Basic Translator </h1>
+      </header>
+    <div class="card p-4">
+        <div class="card-body text-center">
+        <h2 id = "sentence" > Good morning! </h2>
+        </div>
+        <input id = "trns" type="text" placeholder = "Translate to: ">
+        <br><br>
+        <button id = "TranslateB">Translate!</button> 
+
+    </div>
+    <script> 
+        document.querySelector(".card").style.backgroundColor = "lightblue"; // makes box blue
+
+        document.querySelector("#TranslateB").addEventListener("click", translateSentence)
+        
+        var globalVariable;
+
+        function translateSentence() {
+            document.querySelector("#trns").value;
+            let trns=document.querySelector("#trns").value;
+            if (trns == "Spanish") {
+                document.querySelector("#sentence").innerHTML = "Buenos Dias";
+            } else {
+            document.querySelector("#sentence").innerHTML = "Good morning";
+            }
+        }
+
+    </script>
+  </body>
+</html>
